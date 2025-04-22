@@ -8,6 +8,12 @@ import company_profile_icon from "../../../assets/images/company_profile_icon.pn
 import axios from "axios";
 import Loader from "../../../component/extra/loader";
 import { useState } from "react";
+import "../../../styles/homeLinks.css";
+import { CiLogout } from "react-icons/ci";
+import { IoCloudDownload } from "react-icons/io5";
+import { FaClipboardList } from "react-icons/fa";
+import { FcInvite } from "react-icons/fc";
+import { GrAnnounce } from "react-icons/gr";
 
 const HomeLinks = () => {
   const { t } = useTranslation();
@@ -76,61 +82,98 @@ const HomeLinks = () => {
   };
 
   return (
-    <div to="/recharge-method" data-v-7cad3bed="" className="tools-part">
+    <div
+      to="/recharge-method"
+      data-v-7cad3bed=""
+      className=" py-2 bg-primary rounded mt-4"
+    >
       {isLoader ? <Loader /> : null}
-      <Link
-        to="/recharge-method"
-        data-v-7cad3bed=""
-        className="part cursor-pointer"
-      >
-        <div data-v-7cad3bed="" className="icon">
-          <img data-v-7cad3bed="" src={recharge_icon} alt="" />
-        </div>
-        <div data-v-7cad3bed="" className="label">
-          {t("recharge")}
-        </div>
-      </Link>
-      {/* part cursor end */}
-      <Link to="/withdraw-trx" data-v-7cad3bed="" className="part cursor-pointer">
-        <div data-v-7cad3bed="" className="icon">
-          <img data-v-7cad3bed="" src={withdraw_icon} alt="" />
-        </div>
-        <div data-v-7cad3bed="" className="label">
-          {t("withdraw")}
-        </div>
-      </Link>
-      {/* part cursor end */}
-      <div
-        data-v-7cad3bed=""
-        className="part cursor-pointer"
-        onClick={downloadApp}
-      >
-        <Link
-          target="_blank"
-          to="https://usdt-uk.com/assets/images/usdt_uk.apk"
-        >
-          <div data-v-7cad3bed="" className="icon">
-            <img data-v-7cad3bed="" src={app_icon} alt="" />
+      <div className="container">
+        <div className=" row g-2 gx-3 mb-2">
+          <Link
+            to="/recharge-method"
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+          >
+            <div data-v-7cad3bed="" className="">
+              <i className="bi bi-cash-stack fs-3"></i>
+            </div>
+            <div data-v-7cad3bed="" className="label">
+              {t("recharge")}
+            </div>
+          </Link>
+          {/* part cursor end */}
+          <Link
+            to="/withdraw-trx"
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center gap-2 justify-content-around flex-column rounded cursor-pointer"
+          >
+            <div data-v-7cad3bed="" className="">
+              <CiLogout className="fs-3" />
+            </div>
+            <div data-v-7cad3bed="" className="label">
+              {t("withdraw")}
+            </div>
+          </Link>
+          {/* part cursor end */}
+          <div
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+            onClick={downloadApp}
+          >
+            <Link
+              target="_blank"
+              to="https://usdt-uk.com/assets/images/usdt_uk.apk"
+            >
+              <div data-v-7cad3bed="" className="">
+                <IoCloudDownload className="fs-3" />
+              </div>
+              <div data-v-7cad3bed="" className="label">
+                {t("app")}
+              </div>
+            </Link>
           </div>
-          <div data-v-7cad3bed="" className="label">
-            {t("app")}
-          </div>
-        </Link>
+        </div>
+        <div className=" row g-2 gx-3 mb-2">
+          {/* part cursor end */}
+          <Link
+            to="/company-profile"
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+          >
+            <div data-v-7cad3bed="" className="icon">
+              <FaClipboardList className="fs-3" />
+            </div>
+            <div data-v-7cad3bed="" className="label">
+              {t("company_profile")}
+            </div>
+          </Link>
+          <Link
+            to="/company-profile"
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+          >
+            <div data-v-7cad3bed="" className="icon">
+              <FcInvite className="fs-3" />
+            </div>
+            <div data-v-7cad3bed="" className="label">
+              {t("invite")}
+            </div>
+          </Link>
+          <Link
+            to="/company-profile"
+            data-v-7cad3bed=""
+            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+          >
+            <div data-v-7cad3bed="" className="icon">
+              <GrAnnounce className="fs-3" />
+            </div>
+            <div data-v-7cad3bed="" className="label">
+              {t("announcement")}
+            </div>
+          </Link>
+        </div>
       </div>
-
-      {/* part cursor end */}
-      <Link
-        to="/company-profile"
-        data-v-7cad3bed=""
-        className="part cursor-pointer"
-      >
-        <div data-v-7cad3bed="" className="icon">
-          <img data-v-7cad3bed="" src={company_profile_icon} alt="" />
-        </div>
-        <div data-v-7cad3bed="" className="label">
-          {t("company_profile")}
-        </div>
-      </Link>
       {/* part cursor end */}
     </div>
   );
