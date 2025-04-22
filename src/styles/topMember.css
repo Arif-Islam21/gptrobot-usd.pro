@@ -1,0 +1,37 @@
+/* Fancy Hover Effect */
+.swiper-slide {
+  background: linear-gradient(
+    135deg,
+    #f3f4f6,
+    #ffffff
+  ); /* Subtle gradient background */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.swiper-slide:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6f7ff
+  ); /* Slight blue tint on hover */
+}
+
+.vip {
+  color: #28a745; /* Green color for VIP */
+  font-family: "Arial", sans-serif;
+}
+
+.font-anton {
+  font-family: "Anton", sans-serif;
+}
+
+.swiper-slide .text-muted {
+  font-size: 0.9rem; /* Slightly smaller font for email */
+}
+
+/* Optional: Add some rounded corners to the text container */
+.swiper-slide .d-flex {
+  border-radius: 10px;
+}

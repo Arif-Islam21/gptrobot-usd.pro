@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "../../../assets/css/swipeMember.css";
+import "../../../styles/topMember.css";
 const fakeData = [
   { email: "ll*****@gmail.com", vip: "VIP6", amount: "+$1,145.00" },
   { email: "so*****@walker.org", vip: "VIP5", amount: "+$872.00" },
@@ -75,14 +76,14 @@ const HomeMemberList = () => {
 
   return (
     <div data-v-7cad3bed="" className="membership-list">
-      <div data-v-7cad3bed="" className="title">
-        {t("member_list")}
+      <div data-v-7cad3bed="" className="title fs-3">
+        {t("Top Investors")}
       </div>
       <div
         data-v-7cad3bed=""
         className={`swiper swiper-initialized swiper-vertical membership-content`}
       >
-        <div data-v-7cad3bed="" className="swiper-wrapper">
+        {/* <div data-v-7cad3bed="" className="swiper-wrapper">
           {visibleMembers.map((member, index) => (
             <div
               data-v-7cad3bed=""
@@ -90,7 +91,7 @@ const HomeMemberList = () => {
               key={index}
             >
               <div data-v-7cad3bed="" className="left">
-                <div data-v-7cad3bed="" className="vip">
+                <div data-v-7cad3bed="" className="vip text-black">
                   {member.vip}
                 </div>
                 <div data-v-7cad3bed="" className="name">
@@ -99,6 +100,27 @@ const HomeMemberList = () => {
               </div>
               <div data-v-7cad3bed="" className="right font-anton">
                 {member.amount}
+              </div>
+            </div>
+          ))}
+        </div> */}
+        <div className="swiper-wrapper">
+          {visibleMembers.map((member, index) => (
+            <div
+              className="swiper-slide membership-item px-3 py-1 mb-3 rounded shadow-sm hover-shadow"
+              key={index}
+            >
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <div className="d-flex flex-column">
+                  <div className="vip text-uppercase text-success fw-bold fs-5 mb-1">
+                    {member.vip}
+                  </div>
+                  <div className="name text-muted">{member.email}</div>
+                </div>
+
+                <div className="font-anton fs-4 text-primary fw-bold">
+                  {member.amount}
+                </div>
               </div>
             </div>
           ))}
