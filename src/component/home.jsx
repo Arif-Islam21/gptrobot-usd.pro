@@ -100,9 +100,9 @@ const home = () => {
           toggleTelegramPopUp={toggleTelegramPopUp}
         ></Header>
         <div className="index-wrap">
-          <HomeSlider />
           <HomeNotice></HomeNotice>
           <HomeLinks></HomeLinks>
+          <HomeSlider />
           <div className="reative my-$mg text-center text-2xl font-bold text-$btn-text">
             <CountdownTimer targetDate={targetDate} />
             <h5 className="text-sm">{t("task_reset_countdown")}</h5>
