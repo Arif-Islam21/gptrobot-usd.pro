@@ -40,6 +40,7 @@ import TotalAssets from "./extra/home/TotalAssets";
 import InvestmentStats from "./extra/home/InvestmentStats";
 import image from "../../src/assets/images/bitcoin.jpg";
 import PriceList from "./extra/home/PriceList";
+import Partners from "./extra/home/Partners";
 
 const home = () => {
   const [data, setData] = useState({});
@@ -123,6 +124,7 @@ const home = () => {
           <HomeTaskHall showPopup={showPopup} userData={data}></HomeTaskHall>
           <HomeMemberList></HomeMemberList>
           <PriceList />
+          <Partners />
         </div>
         <Navbar></Navbar>
       </div>
