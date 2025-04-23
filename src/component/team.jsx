@@ -202,7 +202,6 @@ const Team = () => {
                   </div>
                 </div>
               </div>
-              {/* team info content ends  */}
             </div>
             {/* team table ends */}
 
@@ -214,7 +213,6 @@ const Team = () => {
                     LEV 1
                   </div>
                 </div>
-                {/* level ends */}
                 <div
                   data-v-d7bc823e=""
                   className="grid grid-cols-2 flex-1 gap-5px"
@@ -252,7 +250,6 @@ const Team = () => {
                   {t("details")}
                 </Link>
               </div>
-              {/* card item ends */}
               <div data-v-d7bc823e="" className="team-item">
                 <div data-v-d7bc823e="" className="level-name">
                   <img data-v-d7bc823e="" src={level2Img} alt="" />

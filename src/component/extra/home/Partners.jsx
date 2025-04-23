@@ -41,7 +41,7 @@ const Partners = () => {
               <img
                 src={partner.image}
                 alt={partner.name}
-                className="w-full h-auto"
+                className="w-full h-auto rounded"
               />
             </a>
           ))}

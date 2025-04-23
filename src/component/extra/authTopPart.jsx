@@ -71,10 +71,15 @@ function authTopPart({ toggleLangPopup, toggleTelegramPopUp }) {
             alt="logo"
           />
         </div>
-        <p className=":uno: font-ali mb-4px mt-4px text-32px font-800 lh-44px">
-           GPTROBOT-USD
+        <p className=":uno: font-ali mb-4px mt-4px text-32px text-uppercase font-800 lh-44px">
+          make-tron.art
         </p>
-        <div className=":uno: text-16px font-800">Welcome to GPTROBOT-USD</div>
+        <div className=":uno: text-16px font-800">
+          Welcome to <span className="text-uppercase">make-tron.art</span>
+        </div>
+        <div className=":uno: text-8px font-800">
+          Explore the future of creativity!
+        </div>
       </div>
       <div className="top-tools">
         <div

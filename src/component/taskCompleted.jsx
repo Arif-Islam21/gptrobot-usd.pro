@@ -31,6 +31,7 @@ import Header from "./extra/Header";
 import SupportLink from "./extra/supportLink";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
+import image from "../assets/images/slider/miningSvg.webp";
 
 const Task = () => {
   const { t } = useTranslation();
@@ -85,7 +86,9 @@ const Task = () => {
                 <div data-v-7f399f52="" className="flex items-center">
                   <div data-v-7f399f52="">
                     <div data-v-7f399f52="" className="value">
-                    {(Number(data.amount) + Number(data.trading_balance)).toFixed(2)}
+                      {(
+                        Number(data.amount) + Number(data.trading_balance)
+                      ).toFixed(2)}
                     </div>
                     <div data-v-7f399f52="" className="desc text-sm">
                       {t("total_balance")}
@@ -148,6 +151,10 @@ const Task = () => {
               </div>
             </div>
             {/* top info ends */}
+            <div>
+              <img src={image} alt="svg image" className="w-100 h-auto" />
+            </div>
+
             <div
               data-v-7f399f52=""
               className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"

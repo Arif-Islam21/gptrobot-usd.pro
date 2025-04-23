@@ -29,6 +29,7 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
+import image from "../assets/images/slider/miningSvg.webp";
 
 const task = () => {
   const [targetDate, setTargetDate] = useState(null);
@@ -151,6 +152,10 @@ const task = () => {
               </div>
             </div>
             {/* top info ends */}
+
+            <div>
+              <img src={image} alt="svg image" className="w-100 h-auto" />
+            </div>
             <div
               data-v-7f399f52=""
               className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"

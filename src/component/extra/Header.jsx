@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/1x/logoNew.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -95,7 +95,9 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
               <div className=":uno: base-logo flex items-center small-logo">
                 <img className="site-img h-full w-full rd-50%" src={logo} />
               </div>
-              <span className="text-truncate">GPTROBOT-USD</span>
+              <span className="text-truncate text-uppercase">
+                make-tron.art
+              </span>
             </div>
             <div className="right">
               <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
