@@ -128,11 +128,14 @@ const task = () => {
                     <div
                       data-v-7f399f52=""
                       className="desc text-center text-sm"
-                      style={{ color: "#000" }}
+                      style={{ color: "#fff" }}
                     >
                       {t("all_task_for_today")}
                     </div>
-                    <div data-v-7f399f52="" className="value text-center">
+                    <div
+                      data-v-7f399f52=""
+                      className="value text-center text-white"
+                    >
                       {data?.product && data.withdraw_status > 0 ? 1 : 0}
                     </div>
                   </div>
@@ -140,11 +143,14 @@ const task = () => {
                     <div
                       data-v-7f399f52=""
                       className="desc text-center text-sm"
-                      style={{ color: "#000" }}
+                      style={{ color: "#fff" }}
                     >
                       {t("todays_remaining_tasks")}
                     </div>
-                    <div data-v-7f399f52="" className="value text-center">
+                    <div
+                      data-v-7f399f52=""
+                      className="value text-center text-white"
+                    >
                       {data?.product && data.withdraw_status ? "1" : "0"}
                     </div>
                   </div>

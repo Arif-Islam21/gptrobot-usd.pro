@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/1x/logoNew.png";
 import { useTranslation } from "react-i18next";
 
 function authTopPart({ toggleLangPopup, toggleTelegramPopUp }) {

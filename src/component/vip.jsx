@@ -21,15 +21,17 @@ import Navbar from "./partial/navbar";
 import { useTranslation } from "react-i18next";
 // import SupportLink from "./extra/supportLink";
 import CustomLoader from "./extra/customLoader";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./extra/Header";
 import SupportLink from "./extra/supportLink";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
+import tik from "../assets/images/slider/tikmark.png";
 
 const vip = () => {
   const { t } = useTranslation();
   const [data, setData] = useState({});
+  console.log(data);
   const navigate = useNavigate();
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -104,6 +106,34 @@ const vip = () => {
   const toggleTelegramPopUp = () => {
     setIsTelegramVisible(!isTelegramVisible);
   };
+
+  const investmentProducts = [
+    {
+      title: "10 Days Regular Product",
+      investmentPeriod: "10 Days",
+      dailyIncome: "10.00%",
+      minInvestment: 100,
+      periodicReturn: "10%",
+      totalInvestments: 3,
+    },
+    {
+      title: "30 Days Regular Product",
+      investmentPeriod: "30 Days",
+      dailyIncome: "15.00%",
+      minInvestment: 500,
+      periodicReturn: "15%",
+      totalInvestments: 3,
+    },
+    {
+      title: "45 Days Regular Product",
+      investmentPeriod: "45 Days",
+      dailyIncome: "20.00%",
+      minInvestment: 1000,
+      periodicReturn: "20%",
+      totalInvestments: 3,
+    },
+  ];
+
   return (
     <div id="app" className="a-t-1 no-4">
       <div
@@ -260,6 +290,69 @@ const vip = () => {
             </p>
             <button onClick={handleConfirm}>Confirm</button>
           </div>
+        </div>
+
+        {/* SOME STATIC DISIGN GOES HERE */}
+        <div>
+          {investmentProducts.map((product, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 rounded-3 bg-white my-2 text-black"
+            >
+              <div className="d-flex justify-content-between align-items-center  p-2">
+                <div>
+                  <h2 className="fs-4 fw-semibold">{product.title}</h2>
+                  <p className="fw-semibold text-secondary">
+                    Investment period: {product.investmentPeriod}
+                  </p>
+                </div>
+                <h2 className="fs-2 fw-bold text-primary">
+                  {product.dailyIncome}
+                </h2>
+              </div>
+              <hr className="my-2" />
+              <div>
+                <div className="d-flex align-items-center gap-3">
+                  <img
+                    src={tik}
+                    alt="tik mark"
+                    className=""
+                    style={{ height: "1.5rem", width: "1.5rem" }}
+                  />
+                  <h3 className="fs-4 fw-semibold text-secondary">
+                    Minimum Investment amount: {product.minInvestment} USDT
+                  </h3>
+                </div>
+                <div className="d-flex align-items-center gap-3">
+                  <img
+                    src={tik}
+                    alt="tik mark"
+                    className=""
+                    style={{ height: "1.5rem", width: "1.5rem" }}
+                  />
+                  <h3 className="fs-4 fw-semibold text-secondary">
+                    Periodic principle and interest: {product.periodicReturn}
+                  </h3>
+                </div>
+                <div className="d-flex align-items-center gap-3">
+                  <img
+                    src={tik}
+                    alt="tik mark"
+                    className=""
+                    style={{ height: "1.5rem", width: "1.5rem" }}
+                  />
+                  <h3 className="fs-4 fw-semibold text-secondary">
+                    Total Invesments: {product.totalInvestments}
+                  </h3>
+                </div>
+              </div>
+              <div className="d-flex justify-content-center align-items-center">
+                <Link to="/recharge" className="btn btn-primary mx-auto my-2">
+                  Invest Now
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
         <CustomLoader />
         <Navbar />
