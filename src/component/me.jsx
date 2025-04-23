@@ -25,7 +25,7 @@ import CustomLoader from "./extra/customLoader";
 // icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/images/logo.webp";
+import logo from "../assets/images/1x/logoNew.png";
 import axios from "axios";
 import Header from "./extra/Header";
 import SupportLink from "./extra/supportLink";
@@ -120,7 +120,6 @@ const HomePage = () => {
     link.download = "usdt-uk.apk"; // Specify the default download name
     link.click();
   };
-
 
   return (
     <div id="app" className="a-t-1 no-4">
@@ -286,7 +285,7 @@ const HomePage = () => {
                       ></div>
                     </div>
                     <div data-v-f004e884="" className="label">
-                     {t("transfer_to")}
+                      {t("transfer_to")}
                     </div>
                   </div>
                   <div

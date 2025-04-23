@@ -1,0 +1,80 @@
+.card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.text-monospace {
+  font-family: "Courier New", monospace;
+}
+
+.text-truncate {
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-dark {
+  color: #333;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fs-4 {
+  font-size: 1.25rem; /* Adjust icon size */
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.text-primary {
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.container-card {
+  background: rgba(74, 68, 68, 0.68);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-info {
+  padding: 1.5rem;
+}
+
+.team-item {
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.fs-4 {
+  font-size: 1.25rem; /* Adjust font size */
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  width: 33.33%;
+}
