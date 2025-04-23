@@ -31,6 +31,12 @@ import Header from "./extra/Header";
 import SupportLink from "./extra/supportLink";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
+import {
+  FaMoneyBillTransfer,
+  FaMoneyBillTrendUp,
+  FaRegMoneyBill1,
+} from "react-icons/fa6";
+import { MdAccountBox } from "react-icons/md";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -154,7 +160,10 @@ const HomePage = () => {
                       : data?.user?.email
                   )}
                 </div>
-                <div data-v-f004e884="" className="level">
+                <div
+                  data-v-f004e884=""
+                  className="shadow px-4 bg-secondary text-light py-1 rounded"
+                >
                   VIP{data?.user?.my_vip}
                 </div>
               </div>
@@ -185,10 +194,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/recharge-method" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <div
-                      data-v-f004e884=""
-                      className="icon i-material-symbols-attach-money"
-                    ></div>
+                    <FaRegMoneyBill1 size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("recharge")}
@@ -198,10 +204,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/withdraw-trx" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <div
-                      data-v-f004e884=""
-                      className="icon i-uil-money-withdrawal"
-                    ></div>
+                    <FaMoneyBillTransfer size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("withdraw")}
@@ -211,10 +214,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/account" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <div
-                      data-v-f004e884=""
-                      className="icon i-material-symbols-account-balance-rounded"
-                    ></div>
+                    <MdAccountBox size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("account")}
@@ -224,10 +224,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/financial" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <div
-                      data-v-f004e884=""
-                      className="icon i-iconamoon-trend-up-bold"
-                    ></div>
+                    <FaMoneyBillTrendUp size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("financial_record")}
