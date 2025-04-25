@@ -105,6 +105,7 @@ const home = () => {
           toggleTelegramPopUp={toggleTelegramPopUp}
         ></Header>
         <div className="index-wrap">
+          <h2 className="fs-4 fw-semibold">Dashboard</h2>
           <HomeNotice></HomeNotice>
           <HomeLinks></HomeLinks>
           <HomeSlider />

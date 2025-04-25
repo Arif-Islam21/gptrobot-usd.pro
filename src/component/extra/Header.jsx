@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/images/1x/logoNew.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
   const [isScrolled, setScroll] = useState(false);
@@ -84,39 +85,39 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
       id="navbar"
       className={
         isScrolled
-          ? "header nav-bar-wrap h-style is-scroll-state"
-          : "header nav-bar-wrap h-style"
+          ? "header nav-bar-wrap bg-black h-style is-scroll-state"
+          : "header nav-bar-wrap bg-black h-style"
       }
     >
-      <div className="nav-bar">
+      <div className="nav-bar ">
         <div id="navBarItem26" className=":uno: nav-bar-content h-full w-full">
           <div className="w-full flex items-center justify-center">
             <div className="left name text-18px!">
               <div className=":uno: base-logo flex items-center small-logo">
                 <img className="site-img h-full w-full rd-50%" src={logo} />
               </div>
-              <span className="text-truncate text-uppercase">
-                make-tron.art
-              </span>
+            </div>
+            <div className="center name text-18px!">
+              <span className="text-truncate text-uppercase">Tronfaw76</span>
             </div>
             <div className="right">
-              <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
+              {/* <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
                 <div className="i-mdi:email-mark-as-unread text-18px"></div>
-              </Link>
+              </Link> */}
               <div
                 className="base-help-btn cursor-pointer"
                 onClick={toggleTelegramPopUp}
               >
-                <div className="i-ri:customer-service-2-line text-18px"></div>
+                <FaTelegramPlane size={26} />
               </div>
-              <div>
+              {/* <div>
                 <div className="base-lang-wrap" onClick={toggleLangPopup}>
                   <div className="i-ph:globe mr-2px text-18px c-$btn-text"></div>
                   <span className="c-$btn-text" id="languageSelect">
                     {displayLanguage}
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

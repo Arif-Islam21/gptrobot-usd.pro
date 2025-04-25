@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
   useEffect(() => {
     if (token) {
     } else {
-      navigate("/"); // Redirect to root if token does not exist
+      // navigate("/"); // Redirect to root if token does not exist
     }
   }, [token, navigate]);
 

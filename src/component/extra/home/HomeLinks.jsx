@@ -14,6 +14,7 @@ import { IoCloudDownload } from "react-icons/io5";
 import { FaClipboardList } from "react-icons/fa";
 import { FcInvite } from "react-icons/fc";
 import { GrAnnounce } from "react-icons/gr";
+import { Container, Row, Col, Button, Card, Spinner } from "react-bootstrap";
 
 const HomeLinks = () => {
   const { t } = useTranslation();
@@ -82,99 +83,185 @@ const HomeLinks = () => {
   };
 
   return (
-    <div
-      to="/recharge-method"
-      data-v-7cad3bed=""
-      className=" py-2 bg-primary rounded mt-4"
-    >
-      {isLoader ? <Loader /> : null}
-      <div className="container">
-        <div className=" row g-2 gx-3 mb-2">
-          <Link
-            to="/recharge-method"
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
-          >
-            <div data-v-7cad3bed="" className="">
-              <i className="bi bi-cash-stack fs-3"></i>
-            </div>
-            <div data-v-7cad3bed="" className="label">
-              {t("recharge")}
-            </div>
-          </Link>
-          {/* part cursor end */}
-          <Link
-            to="/withdraw-trx"
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center gap-2 justify-content-around flex-column rounded cursor-pointer"
-          >
-            <div data-v-7cad3bed="" className="">
-              <CiLogout className="fs-3" />
-            </div>
-            <div data-v-7cad3bed="" className="label">
-              {t("withdraw")}
-            </div>
-          </Link>
-          {/* part cursor end */}
-          <div
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
-            onClick={downloadApp}
-          >
+    // <div
+    //   to="/recharge-method"
+    //   data-v-7cad3bed=""
+    //   className=" py-2 bg-primary rounded mt-4"
+    // >
+    //   {isLoader ? <Loader /> : null}
+    //   <div className="container">
+    //     <div className=" row g-2 gx-3 mb-2">
+    //       <Link
+    //         to="/recharge-method"
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+    //       >
+    //         <div data-v-7cad3bed="" className="">
+    //           <i className="bi bi-cash-stack fs-3"></i>
+    //         </div>
+    //         <div data-v-7cad3bed="" className="label">
+    //           {t("recharge")}
+    //         </div>
+    //       </Link>
+    //       {/* part cursor end */}
+    //       <Link
+    //         to="/withdraw-trx"
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center gap-2 justify-content-around flex-column rounded cursor-pointer"
+    //       >
+    //         <div data-v-7cad3bed="" className="">
+    //           <CiLogout className="fs-3" />
+    //         </div>
+    //         <div data-v-7cad3bed="" className="label">
+    //           {t("withdraw")}
+    //         </div>
+    //       </Link>
+    //       {/* part cursor end */}
+    //       <div
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+    //         onClick={downloadApp}
+    //       >
+    //         <Link
+    //           target="_blank"
+    //           to="https://usdt-uk.com/assets/images/usdt_uk.apk"
+    //         >
+    //           <div data-v-7cad3bed="" className="">
+    //             <IoCloudDownload className="fs-3" />
+    //           </div>
+    //           <div data-v-7cad3bed="" className="label">
+    //             {t("app")}
+    //           </div>
+    //         </Link>
+    //       </div>
+    //     </div>
+    //     <div className=" row g-2 gx-3 mb-2">
+    //       {/* part cursor end */}
+    //       <Link
+    //         to="/company-profile"
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+    //       >
+    //         <div data-v-7cad3bed="" className="icon">
+    //           <FaClipboardList className="fs-3" />
+    //         </div>
+    //         <div data-v-7cad3bed="" className="label">
+    //           {t("company_profile")}
+    //         </div>
+    //       </Link>
+    //       <Link
+    //         to="/company-profile"
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+    //       >
+    //         <div data-v-7cad3bed="" className="icon">
+    //           <FcInvite className="fs-3" />
+    //         </div>
+    //         <div data-v-7cad3bed="" className="label">
+    //           {t("invite")}
+    //         </div>
+    //       </Link>
+    //       <Link
+    //         to="/company-profile"
+    //         data-v-7cad3bed=""
+    //         className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
+    //       >
+    //         <div data-v-7cad3bed="" className="icon">
+    //           <GrAnnounce className="fs-3" />
+    //         </div>
+    //         <div data-v-7cad3bed="" className="label">
+    //           {t("announcement")}
+    //         </div>
+    //       </Link>
+    //     </div>
+    //   </div>
+    //   {/* part cursor end */}
+    // </div>
+
+    <div className="py-3 bg-dark rounded-4 mt-4">
+      {isLoader && (
+        <div className="d-flex justify-content-center mb-3">
+          <Loader />
+        </div>
+      )}
+      <Container>
+        <Row className="g-4">
+          <Col xs={4} className="text-center">
             <Link
-              target="_blank"
-              to="https://usdt-uk.com/assets/images/usdt_uk.apk"
+              to="/recharge-method"
+              className="text-decoration-none text-white"
             >
-              <div data-v-7cad3bed="" className="">
-                <IoCloudDownload className="fs-3" />
+              <div className="icon-wrapper mb-2">
+                <i className="bi bi-cash-stack fs-3"></i>
               </div>
-              <div data-v-7cad3bed="" className="label">
-                {t("app")}
-              </div>
+              <div className="small">{t("recharge")}</div>
             </Link>
-          </div>
-        </div>
-        <div className=" row g-2 gx-3 mb-2">
-          {/* part cursor end */}
-          <Link
-            to="/company-profile"
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
-          >
-            <div data-v-7cad3bed="" className="icon">
-              <FaClipboardList className="fs-3" />
+          </Col>
+
+          <Col xs={4} className="text-center">
+            <Link
+              to="/withdraw-trx"
+              className="text-decoration-none text-white"
+            >
+              <div className="icon-wrapper mb-2">
+                <CiLogout className="fs-3" />
+              </div>
+              <div className="small">{t("withdraw")}</div>
+            </Link>
+          </Col>
+
+          <Col xs={4} className="text-center">
+            <div onClick={downloadApp}>
+              <Link
+                target="_blank"
+                to="https://usdt-uk.com/assets/images/usdt_uk.apk"
+                className="text-decoration-none text-white"
+              >
+                <div className="icon-wrapper mb-2">
+                  <IoCloudDownload className="fs-3" />
+                </div>
+                <div className="small">{t("app")}</div>
+              </Link>
             </div>
-            <div data-v-7cad3bed="" className="label">
-              {t("company_profile")}
-            </div>
-          </Link>
-          <Link
-            to="/company-profile"
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
-          >
-            <div data-v-7cad3bed="" className="icon">
-              <FcInvite className="fs-3" />
-            </div>
-            <div data-v-7cad3bed="" className="label">
-              {t("invite")}
-            </div>
-          </Link>
-          <Link
-            to="/company-profile"
-            data-v-7cad3bed=""
-            className="linkButton p-3 col-4 d-flex align-items-center justify-content-center flex-column rounded cursor-pointer"
-          >
-            <div data-v-7cad3bed="" className="icon">
-              <GrAnnounce className="fs-3" />
-            </div>
-            <div data-v-7cad3bed="" className="label">
-              {t("announcement")}
-            </div>
-          </Link>
-        </div>
-      </div>
-      {/* part cursor end */}
+          </Col>
+
+          <Col xs={4} className="text-center">
+            <Link
+              to="/company-profile"
+              className="text-decoration-none text-white"
+            >
+              <div className="icon-wrapper mb-2">
+                <FaClipboardList className="fs-3" />
+              </div>
+              <div className="small">{t("team")}</div>
+            </Link>
+          </Col>
+
+          <Col xs={4} className="text-center">
+            <Link
+              to="/company-profile"
+              className="text-decoration-none text-white"
+            >
+              <div className="icon-wrapper mb-2">
+                <i className="bi bi-info-circle fs-3"></i>
+              </div>
+              <div className="small">{t("about_us")}</div>
+            </Link>
+          </Col>
+
+          <Col xs={4} className="text-center">
+            <Link
+              to="/company-profile"
+              className="text-decoration-none text-white"
+            >
+              <div className="icon-wrapper mb-2">
+                <GrAnnounce className="fs-3" />
+              </div>
+              <div className="small">{t("announcement")}</div>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
