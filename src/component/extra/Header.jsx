@@ -98,7 +98,9 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
               </div>
             </div>
             <div className="center name text-18px!">
-              <span className="text-truncate text-uppercase">Tronfaw76</span>
+              <span className="text-truncate text-uppercase">
+                Make-Tron.Art
+              </span>
             </div>
             <div className="right">
               {/* <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
