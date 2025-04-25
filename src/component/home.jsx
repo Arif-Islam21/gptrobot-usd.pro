@@ -38,7 +38,7 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 import UpgradeLevelAlert from "./extra/UpgradeLevelAlert";
 import TotalAssets from "./extra/home/TotalAssets";
 import InvestmentStats from "./extra/home/InvestmentStats";
-import image from "../../src/assets/images/bitcoin.jpg";
+import image from "../../src/assets/images/1x/rendering.jpg";
 import PriceList from "./extra/home/PriceList";
 import Partners from "./extra/home/Partners";
 
@@ -118,10 +118,11 @@ const home = () => {
               className="rounded-2 w-100 my-3"
             />
           </div>
-          <div className="reative my-$mg text-center text-2xl font-bold text-$btn-text">
+          {/* THAT ITEM IS TOLD TO TURN OFF */}
+          {/* <div className="reative my-$mg text-center text-2xl font-bold text-$btn-text">
             <CountdownTimer targetDate={targetDate} />
             <h5 className="text-sm">{t("task_reset_countdown")}</h5>
-          </div>
+          </div> */}
           <HomeTaskHall showPopup={showPopup} userData={data}></HomeTaskHall>
           <HomeMemberList></HomeMemberList>
           <PriceList />

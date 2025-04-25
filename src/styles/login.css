@@ -1,0 +1,23 @@
+.bg-half-black {
+  background-color: #0000007b;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.3);
+}
+
+.text-link {
+  color: #1967db;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.bg-light-blue {
+  background-color: #2452e9;
+  box-shadow: 0px 12px 16px #000;
+}
+
+.input-style {
+  background-color: rgba(245, 245, 245, 0.557) !important;
+}
+.custom-placeholder::placeholder {
+  color: #6c757d !important;
+  opacity: 1 !important;
+}

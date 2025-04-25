@@ -15,7 +15,7 @@ import "../assets/css/style7.css";
 import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 
-import logo from "../assets/images/logo.webp";
+import logo from "../assets/images/1x/logoNew.png";
 // import SupportLink from "./extra/supportLink";
 import CustomLoader from "./extra/customLoader";
 import { useEffect, useState } from "react";
@@ -155,7 +155,7 @@ const withdraw = () => {
               className="number"
               style={{
                 background:
-                  "linear-gradient(rgb(244, 76, 240) 0%, rgb(239, 156, 232) 100%)",
+                  "linear-gradient(rgb(0,3,108) 0%, rgb(0, 3, 108) 100%)",
               }}
             >
               <div className="title">{t("total_balance")}</div>

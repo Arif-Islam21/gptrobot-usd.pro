@@ -42,7 +42,7 @@ const Transfer = () => {
       // Prepare the data to send
       const formData = {
         amount,
-        password
+        password,
       };
 
       // Send POST request
@@ -100,10 +100,13 @@ const Transfer = () => {
                 data-v-ff2bea11=""
                 className="transfer-type-item w-[calc((100%-30px)/2)] text-center"
               >
-                <div data-v-ff2bea11="" className="text-xs">
+                <div data-v-ff2bea11="" className="text-xs text-white">
                   {t("withdrawal_account")}
                 </div>
-                <div data-v-ff2bea11="" className="font-mono text-xl font-bold">
+                <div
+                  data-v-ff2bea11=""
+                  className="font-mono text-xl text-white font-bold"
+                >
                   {data?.withdraw_balance} USDT
                 </div>
               </div>
@@ -120,10 +123,13 @@ const Transfer = () => {
                 data-v-ff2bea11=""
                 className="transfer-type-item w-[calc((100%-30px)/2)] text-center"
               >
-                <div data-v-ff2bea11="" className="text-xs">
+                <div data-v-ff2bea11="" className="text-xs text-white">
                   {t("basic_account")}
                 </div>
-                <div data-v-ff2bea11="" className="font-mono text-lg font-bold">
+                <div
+                  data-v-ff2bea11=""
+                  className="font-mono text-lg text-white font-bold"
+                >
                   {parseFloat(data?.balance || 0).toFixed(2)} USDT
                 </div>
               </div>
@@ -135,7 +141,7 @@ const Transfer = () => {
             >
               <form data-v-ff2bea11="" onSubmit={handleSubmit}>
                 <div data-v-ff2bea11="" className="base-input is-number">
-                  <div className="input-box">
+                  <div className="input-box border">
                     <div className="input-left-slot"></div>
                     <input
                       maxLength={140}
@@ -150,7 +156,7 @@ const Transfer = () => {
                   </div>
                 </div>
                 <div data-v-ff2bea11="" className="base-input is-password">
-                  <div className="input-box">
+                  <div className="input-box border">
                     <div className="input-left-slot"></div>
                     <input
                       placeholder="Password"

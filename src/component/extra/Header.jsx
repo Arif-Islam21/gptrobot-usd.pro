@@ -105,10 +105,11 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
                 <div className="i-mdi:email-mark-as-unread text-18px"></div>
               </Link> */}
               <div
-                className="base-help-btn cursor-pointer"
+                className=" cursor-pointer"
+                // className="base-help-btn cursor-pointer"
                 onClick={toggleTelegramPopUp}
               >
-                <FaTelegramPlane size={26} />
+                <FaTelegramPlane color="#132FBC" size={26} />
               </div>
               {/* <div>
                 <div className="base-lang-wrap" onClick={toggleLangPopup}>

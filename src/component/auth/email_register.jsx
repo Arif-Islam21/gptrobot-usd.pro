@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 // fontawesome
 
@@ -20,6 +21,7 @@ import "../../assets/css/style6.css";
 import "../../assets/css/style7.css";
 import "../../assets/css/style8.css";
 import "../../assets/css/style9.css";
+import "../../styles/login.css";
 import LanguagePopUp from "../extra/LanguagePopUp";
 import TelegramPopUp from "../extra/TelegramPopUp";
 
@@ -167,12 +169,12 @@ function App() {
   return (
     <div id="app" className="a-t-1 no-4">
       <div className="login">
-        <div className=":uno: container-login relative">
-          <AuthTop
+        <div className=":uno: container-login relative d-flex align-items-center justify-content-center">
+          {/* <AuthTop
             selectedLanguage={selectedLanguage}
             toggleLangPopup={toggleLangPopup}
             toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop>
+          ></AuthTop> */}
           {/* <!-- top-info ends --> */}
 
           {alertVisible && (
@@ -198,8 +200,9 @@ function App() {
                   "slide-in-right .3s cubic-bezier(.25,.46,.45,.94) both",
               }}
             >
-              <div className=":uno: container-form w-full rd-$radius">
-                <div className=":uno: base-user-tab flex items-center justify-center">
+              <div className=":uno: container-form w-full bg-light-blue rd-$radius">
+                {/* TAB ICONS ARE HERE */}
+                {/* <div className=":uno: base-user-tab flex items-center justify-center">
                   <Link
                     className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                     to="/register"
@@ -212,16 +215,35 @@ function App() {
                   >
                     {t("RegisterByPhone")}
                   </Link>
+                </div> */}
+                <h2 className="fs-4 fw-bold">Sign Up</h2>
+                <div className="base-input is-text">
+                  {/* <div className="label">{t("email")}</div> */}
+                  <div className="input-box">
+                    <div className="input-left-slot"></div>
+                    <input
+                      type="text"
+                      className="w-full custom-placeholder"
+                      placeholder={t("User Name")}
+                      id="userName"
+                      // value={email}
+                      // onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <div className="input-right-slot"></div>
+                  </div>
+                  {/* {errors.email && (
+                    <small className="text-danger">{errors.userName}</small>
+                  )} */}
                 </div>
                 <div className="base-input is-text">
-                  <div className="label">{t("email")}</div>
+                  {/* <div className="label">{t("email")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
                       type="email"
-                      className="w-full"
-                      id="email"
+                      className="w-full custom-placeholder"
                       placeholder={t("email")}
+                      id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -232,7 +254,7 @@ function App() {
                   )}
                 </div>
                 <div className="base-input is-password">
-                  <div className="label">{t("password")}</div>
+                  {/* <div className="label">{t("password")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -275,7 +297,7 @@ function App() {
                   )}
                 </div>
                 <div className="base-input is-password">
-                  <div className="label">{t("re_enter_password")}</div>
+                  {/* <div className="label">{t("re_enter_password")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -309,7 +331,7 @@ function App() {
                   )}
                 </div>
                 <div className="base-input">
-                  <div className="label">{t("invitation_code")}</div>
+                  {/* <div className="label">{t("invitation_code")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -328,21 +350,29 @@ function App() {
                     </small>
                   )}
                 </div>
+                <div className="tools mt-5px">
+                  <div className=":uno: my-3 flex items-center justify-center">
+                    <Button
+                      variant="success"
+                      size="lg"
+                      type="submit"
+                      className="w-100"
+                    >
+                      <div>{t("sign_up")}</div>
+                    </Button>
+                  </div>
+
+                  <div className="mt-10px text-center">
+                    <Link
+                      to="/"
+                      className="register cursor-pointer nav-underline d-block"
+                    >
+                      {t("sign_in")}
+                    </Link>
+                  </div>
+                </div>
               </div>
               <div className=":uno: mt-12px flex items-center justify-end"></div>
-              <div className="tools mt-20px">
-                <div className=":uno: base-main-btn flex items-center justify-center">
-                  <button type="submit" className="base-main-btn-content mx-0">
-                    <div>{t("sign_up")}</div>
-                  </button>
-                </div>
-
-                <div className="mt-20px text-center">
-                  <Link to="/" className="register cursor-pointer d-block">
-                    {t("sign_in")}
-                  </Link>
-                </div>
-              </div>
             </form>
           </div>
           {/* login contents ends */}

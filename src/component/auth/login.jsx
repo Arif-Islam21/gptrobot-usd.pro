@@ -9,7 +9,9 @@ import "../../assets/css/style6.css";
 import "../../assets/css/style7.css";
 import "../../assets/css/style8.css";
 import "../../assets/css/style9.css";
+import "../../styles/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
@@ -96,12 +98,12 @@ function App() {
   return (
     <div id="app" className="a-t-1 no-4">
       <div className="login">
-        <div className=":uno: container-login relative">
-          <AuthTop
+        <div className=":uno: container-login relative d-flex align-items-center justify-content-center">
+          {/* <AuthTop
             selectedLanguage={selectedLanguage}
             toggleLangPopup={toggleLangPopup}
             toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop>
+          ></AuthTop> */}
 
           {alertVisible && (
             <div
@@ -127,8 +129,8 @@ function App() {
                   "slide-in-right .3s cubic-bezier(.25,.46,.45,.94) both",
               }}
             >
-              <div className=":uno: container-form w-full rd-$radius">
-                <div className=":uno: base-user-tab flex items-center justify-center">
+              <div className=":uno: container-form w-full bg-half-black rd-$radius">
+                {/* <div className=":uno: base-user-tab flex items-center justify-center">
                   <Link
                     className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                     to="/"
@@ -141,10 +143,10 @@ function App() {
                   >
                     {t("phone_login")}
                   </Link>
-                </div>
-
+                </div> */}
+                <h2 className="fs-4 fw-semibold">Login</h2>
                 <div className="base-input is-text">
-                  <div className="label">{t("email")}</div>
+                  {/* <div className="label">{t("email")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -162,7 +164,7 @@ function App() {
                   )}
                 </div>
                 <div className="base-input is-password">
-                  <div className="label">{t("password")}</div>
+                  {/* <div className="label">{t("password")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -194,28 +196,35 @@ function App() {
                   )}
                 </div>
 
+                {/* LOGIN SIGNUP BUTTONS */}
+                <div className="tools mt-4">
+                  <div className=":uno: flex items-center justify-center">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      type="submit"
+                      className="base-main-btn-content mx-0"
+                    >
+                      <div>{t("sign_in")}</div>
+                    </Button>
+                  </div>
+
+                  <div
+                    className="mt-4 text-center"
+                    style={{ marginBottom: "20px" }}
+                  >
+                    <Link
+                      to="/register"
+                      className="register cursor-pointer text-link d-block"
+                    >
+                      {t("sign_up")}
+                    </Link>
+                  </div>
+                </div>
+
                 {/* tab-content2 ends */}
               </div>
               <div className=":uno: mt-12px flex items-center justify-end"></div>
-              <div className="tools mt-20px">
-                <div className=":uno: base-main-btn flex items-center justify-center">
-                  <button type="submit" className="base-main-btn-content mx-0">
-                    <div>{t("sign_in")}</div>
-                  </button>
-                </div>
-
-                <div
-                  className="mt-20px text-center"
-                  style={{ marginBottom: "67px" }}
-                >
-                  <Link
-                    to="/register"
-                    className="register cursor-pointer d-block"
-                  >
-                    {t("sign_up")}
-                  </Link>
-                </div>
-              </div>
             </form>
           </div>
           {/* login contents ends */}
