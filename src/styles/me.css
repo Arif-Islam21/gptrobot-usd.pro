@@ -1,0 +1,18 @@
+.me-logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+  background-color: transparent;
+  padding: 10px 3px;
+}
+
+.me-icon {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a91;
+}

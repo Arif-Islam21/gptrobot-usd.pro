@@ -96,7 +96,10 @@ function App() {
     setEyeOutline(!eyeOutline);
   };
   return (
-    <div id="app" className="a-t-1 no-4">
+    <div
+      id="app"
+      className="a-t-1 no-4 d-flex align-items-center justify-content-center"
+    >
       <div className="login">
         <div className=":uno: container-login relative d-flex align-items-center justify-content-center">
           {/* <AuthTop

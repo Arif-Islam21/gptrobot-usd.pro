@@ -12,6 +12,7 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/me.css";
 import { Link, useNavigate } from "react-router-dom";
 import depositeMe from "../assets/images/deposit_me.png";
 import withdrawMe from "../assets/images/withdraw-me.png";
@@ -152,7 +153,10 @@ const HomePage = () => {
                   alt="logo"
                 />
               </div>
-              <div data-v-f004e884="" className="user-info">
+              <div
+                data-v-f004e884=""
+                className="user-info d-flex flex-column gap-2"
+              >
                 <div data-v-f004e884="">
                   {formatEmailOrPhone(
                     data?.user?.email == null
@@ -291,13 +295,16 @@ const HomePage = () => {
                   ></div>
                 </div>
               </Link>
-              <Link
+              <button
                 data-v-f004e884=""
-                className="item"
+                className="me-logout-btn"
                 onClick={handleConfirmLogout}
               >
-                <div data-v-f004e884="" className="flex items-center">
-                  <div data-v-f004e884="" className="icon-box">
+                <div
+                  data-v-f004e884=""
+                  className="d-flex align-items-center gap-3"
+                >
+                  <div data-v-f004e884="" className="icon-box me-icon">
                     <div
                       data-v-f004e884=""
                       className="icon i-material-symbols-logout-sharp"
@@ -311,14 +318,16 @@ const HomePage = () => {
                   data-v-f004e884=""
                   className="icon i-material-symbols-arrow-forward-ios"
                 ></div>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
 
         {/* <SupportLink /> */}
         <CustomLoader />
-        <Navbar />
+        <div className="mt-5">
+          <Navbar />
+        </div>
       </div>
       <LanguagePopUp
         isLanguageVisible={isLanguageVisible}
