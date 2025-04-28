@@ -18,6 +18,7 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/rechargeMethod.css";
 
 import logo from "../assets/images/logo.webp";
 import trc20 from "../assets/images/trc20-usdt.jpg";
@@ -25,6 +26,7 @@ import trx from "../assets/images/trx.webp";
 import Bep20 from "../assets/images/bep20_usdt_icon-rJ8-h2ZE.png";
 import bnb from "../assets/images/bnb_icon-C7ti1KQ3.png";
 import Barcode from "../assets/images/barcode.gif";
+import { IoMdArrowDropright } from "react-icons/io";
 
 //component
 import CustomLoader from "./extra/customLoader";
@@ -49,12 +51,8 @@ const rechargeMethod = () => {
     <div id="app" className="a-t-1 no-4">
       <div className="box-border min-h-full w-full pt-45px">
         <SingleHeader></SingleHeader>
-        <div className="p-$mg">
-          <div
-            rc-page=""
-            className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text mt-12px px-12px py-0"
-            style={{ background: "#ffffff30" }}
-          >
+        {/* <div className="p-$mg">
+          <div rc-page="" className=":uno: bg-transparent shadow-none">
             <Link rc-page="" className="recharge-item" to="/recharge">
               <div rc-page="" className="flex items-center">
                 <img
@@ -126,6 +124,60 @@ const rechargeMethod = () => {
                   className="i-material-symbols:arrow-forward-ios h-20px w-20px text-$text-gray"
                 ></div>
               </div>
+            </Link>
+          </div>
+        </div> */}
+        <div
+          className="container py-4"
+          style={{ backgroundColor: "transparent", minHeight: "100vh" }}
+        >
+          <h2 className="text-white fs-4 mb-4">
+            Choose currency to continue with:
+          </h2>
+
+          <div className="d-flex flex-column gap-3">
+            <Link
+              to="/recharge"
+              className="currency-btn d-flex justify-content-between align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2">
+                <img src={trc20} alt="TRC20" className="currency-icon" />
+                <span className="currency-text">TRC20-USDT</span>
+              </div>
+              <i className="bi bi-chevron-right text-white fs-4"></i>
+            </Link>
+
+            <Link
+              to="/recharge-trx"
+              className="currency-btn d-flex justify-content-between align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2">
+                <img src={trx} alt="TRX" className="currency-icon" />
+                <span className="currency-text">TRX</span>
+              </div>
+              <i className="bi bi-chevron-right text-white fs-4"></i>
+            </Link>
+
+            <Link
+              to="/recharge-bep20"
+              className="currency-btn d-flex justify-content-between align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2">
+                <img src={Bep20} alt="BEP20" className="currency-icon" />
+                <span className="currency-text">BEP20-USDT</span>
+              </div>
+              <i className="bi bi-chevron-right text-white fs-4"></i>
+            </Link>
+
+            <Link
+              to="/recharge-bnb"
+              className="currency-btn d-flex justify-content-between align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2">
+                <img src={bnb} alt="BNB" className="currency-icon" />
+                <span className="currency-text">BNB</span>
+              </div>
+              <i className="bi bi-chevron-right text-white fs-4"></i>
             </Link>
           </div>
         </div>

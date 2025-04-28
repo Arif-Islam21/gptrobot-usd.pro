@@ -26,6 +26,7 @@ import SingleHeader from "./extra/SingleHeader";
 import SupportLink from "./extra/supportLink";
 import TelegramPopUp from "./extra/TelegramPopUp";
 import Form from "react-bootstrap/Form";
+import { Button } from "react-bootstrap";
 
 const Withdraw = () => {
   const navigate = useNavigate();
@@ -315,15 +316,18 @@ const Withdraw = () => {
                   </span>
                   <div className="text-sm">{actuallyReceived} USDT</div>
                 </div> */}
-                <button
-                  type="submit"
-                  className=":uno: btn btn-primary my-3 mx-auto flex items-center justify-center"
-                  disabled={isLoading}
-                >
-                  <div className="">
-                    <span>{t("confirm")}</span>
-                  </div>
-                </button>
+                <div className="d-flex align-items-center justify-content-center">
+                  <Button
+                    type="submit"
+                    className="btn btn-primary my-3 d-flex align-items-center justify-content-center w-75"
+                    style={{ maxWidth: "300px" }}
+                    disabled={isLoading}
+                  >
+                    <div>
+                      <span>{t("confirm")}</span>
+                    </div>
+                  </Button>
+                </div>
               </div>
             </form>
           </div>

@@ -1,0 +1,30 @@
+.recharge-div {
+  padding: 1rem 2rem;
+  background-color: #7a034f;
+  border-radius: 1.2rem;
+  width: 100%;
+  border: 2px solid red;
+}
+
+.currency-btn {
+  background-color: #800080; /* Purple */
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.currency-btn:hover {
+  background-color: #a020f0; /* Lighter purple on hover */
+}
+
+.currency-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.currency-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
