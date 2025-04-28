@@ -27,6 +27,7 @@ import SingleHeader from "./extra/SingleHeader";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Table } from "react-bootstrap";
 
 const Financial = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Financial = () => {
   const level = query.get("level");
 
   const [data, setData] = useState({});
+  console.log(data?.rebetas);
   const [isLoading, setIsLoading] = useState(false); // State to control loader visibility
 
   useEffect(() => {
@@ -93,74 +95,24 @@ const Financial = () => {
 
           <div team-details="" className="team-detail-wrap p-$mg">
             {data?.rebetas?.length > 0 ? (
-              data.rebetas.map((rebeta) => (
-                <div
-                  team-details=""
-                  className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text team-detail-item mb-20px"
-                  key={rebeta.id}
-                >
-                  <div className="team_details_container">
-                    <div team-details="" className="user-account mb-10px">
-                      <div team-details="" className="c-$text-gray">
-                        {t("account")}
-                      </div>
-                      <div team-details="" className="ml-10px">
-                        {formatEmailOrPhone(rebeta.email_phone)}
-                      </div>
-                    </div>
-                    <div team-details="" className="user-money">
-                      <div team-details="" className="item">
-                        <div
-                          team-details=""
-                          className="mb-2px text-12px lh-14px c-$text-gray"
-                        >
-                          {t("recharge_amount")}
-                        </div>
-                        <div team-details="" className="text-lg">
-                          {parseFloat(rebeta.deposite_amount).toFixed(2)}
-                        </div>
-                      </div>
-                      <div team-details="" className="item">
-                        <div
-                          team-details=""
-                          className="mb-2px text-12px lh-14px c-$text-gray"
-                        >
-                          {t("recharge_rebate")}
-                        </div>
-                        <div team-details="" className="text-lg">
-                          {parseFloat(rebeta.commission).toFixed(2)}
-                        </div>
-                      </div>
-                      <div team-details="" className="item">
-                        <div
-                          team-details=""
-                          className="mb-2px text-12px lh-14px c-$text-gray"
-                        >
-                          {t("task_rebate")}
-                        </div>
-                        <div team-details="" className="text-lg">
-                          0
-                        </div>
-                      </div>
-                    </div>
-                    {/* user-money ends */}
-                    <div
-                      team-details=""
-                      className="flex items-end justify-end text-12px lh-14px c-$text-gray"
-                      style={{ marginTop: "15px" }}
-                    >
-                      {t("joining_time")}
-                      <span
-                        team-details=""
-                        className="text-13px"
-                        style={{ marginLeft: "10px" }}
-                      >
-                        {new Date(rebeta.joining_date).toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))
+              <Table responsive striped bordered className="bg-white">
+                <thead>
+                  <tr className="text-center">
+                    <th>Account</th>
+                    <th>Commission</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  {data.rebetas.map((rebeta, index) => (
+                    <tr key={rebeta?.id || index}>
+                      <td>{rebeta?.email_phone}</td>
+                      <td>{rebeta?.deposite_amount} trx</td>
+                      <td>{rebeta?.created_at}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
             ) : (
               <div className="no_data_wrapp text-center mt-4">
                 <span className="no_data">{t("no_data")}</span>
@@ -181,6 +133,71 @@ const Financial = () => {
         {/* support section */}
         {/* <SupportLink /> */}
         {/* support section */}
+        {/* <div
+          team-details=""
+          className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text team-detail-item mb-20px"
+          key={rebeta.id}
+        >
+          <div className="team_details_container text-white">
+            <div team-details="" className="user-account mb-10px">
+              <div team-details="" className="c-$text-gray">
+                {t("account")}
+              </div>
+              <div team-details="" className="ml-10px">
+                {formatEmailOrPhone(rebeta.email_phone)}
+              </div>
+            </div>
+            <div team-details="" className="user-money">
+              <div team-details="" className="item">
+                <div
+                  team-details=""
+                  className="mb-2px text-12px lh-14px c-$text-gray"
+                >
+                  {t("recharge_amount")}
+                </div>
+                <div team-details="" className="text-lg">
+                  {parseFloat(rebeta.deposite_amount).toFixed(2)}
+                </div>
+              </div>
+              <div team-details="" className="item">
+                <div
+                  team-details=""
+                  className="mb-2px text-12px lh-14px c-$text-gray"
+                >
+                  {t("recharge_rebate")}
+                </div>
+                <div team-details="" className="text-lg">
+                  {parseFloat(rebeta.commission).toFixed(2)}
+                </div>
+              </div>
+              <div team-details="" className="item">
+                <div
+                  team-details=""
+                  className="mb-2px text-12px lh-14px c-$text-gray"
+                >
+                  {t("task_rebate")}
+                </div>
+                <div team-details="" className="text-lg">
+                  0
+                </div>
+              </div>
+            </div>
+            <div
+              team-details=""
+              className="flex items-end justify-end text-12px lh-14px c-$text-gray"
+              style={{ marginTop: "15px" }}
+            >
+              {t("joining_time")}
+              <span
+                team-details=""
+                className="text-13px"
+                style={{ marginLeft: "10px" }}
+              >
+                {new Date(rebeta.joining_date).toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );
