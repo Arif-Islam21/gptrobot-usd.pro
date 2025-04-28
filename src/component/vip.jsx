@@ -149,7 +149,7 @@ const vip = () => {
             {t("upgrade_log")}
           </div>
           {/* vip log ends */}
-          <div data-v-819be10a="" className="vip-wrap">
+          {/* <div data-v-819be10a="" className="vip-wrap">
             {data?.vips?.map((item, index) => {
               return (
                 <div
@@ -269,7 +269,7 @@ const vip = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
         {/* vip-info-wrap ends */}
         <div
@@ -350,14 +350,6 @@ const vip = () => {
                 <Link to="/recharge" className="btn btn-primary mx-auto my-2">
                   Invest Now
                 </Link>
-                <div data-v-819be10a="" className="active-level">
-                  <div data-v-819be10a="" className="active-btn">
-                    <span data-v-819be10a="" style={{ marginRight: "16px" }}>
-                      USDT
-                    </span>
-                    {t("unlock_now")}
-                  </div>
-                </div>
               </div>
             </div>
           ))}
