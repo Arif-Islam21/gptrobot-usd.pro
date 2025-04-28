@@ -109,17 +109,17 @@ const Announcement = () => {
   const [show, setShow] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
-  useEffect(() => {
-    // Show the announcement after 2 seconds
-    const showTimeout = setTimeout(() => {
-      setShow(true);
-    }, 2000);
+  // useEffect(() => {
+  //   // Show the announcement after 2 seconds
+  //   const showTimeout = setTimeout(() => {
+  //     setShow(true);
+  //   }, 2000);
 
-    // Clear timeout if the component unmounts
-    return () => {
-      clearTimeout(showTimeout);
-    };
-  }, []);
+  //   // Clear timeout if the component unmounts
+  //   return () => {
+  //     clearTimeout(showTimeout);
+  //   };
+  // }, []);
 
   const handleClose = () => {
     setShow(false);

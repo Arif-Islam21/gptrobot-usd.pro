@@ -123,7 +123,7 @@ const home = () => {
             <CountdownTimer targetDate={targetDate} />
             <h5 className="text-sm">{t("task_reset_countdown")}</h5>
           </div> */}
-          <HomeTaskHall showPopup={showPopup} userData={data}></HomeTaskHall>
+          {/* <HomeTaskHall showPopup={showPopup} userData={data}></HomeTaskHall> */}
           <HomeMemberList></HomeMemberList>
           <PriceList />
           <Partners />

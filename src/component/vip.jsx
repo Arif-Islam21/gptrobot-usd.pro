@@ -31,7 +31,7 @@ import tik from "../assets/images/slider/tikmark.png";
 const vip = () => {
   const { t } = useTranslation();
   const [data, setData] = useState({});
-  console.log(data);
+  // const data = true;
   const navigate = useNavigate();
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -350,6 +350,14 @@ const vip = () => {
                 <Link to="/recharge" className="btn btn-primary mx-auto my-2">
                   Invest Now
                 </Link>
+                <div data-v-819be10a="" className="active-level">
+                  <div data-v-819be10a="" className="active-btn">
+                    <span data-v-819be10a="" style={{ marginRight: "16px" }}>
+                      USDT
+                    </span>
+                    {t("unlock_now")}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

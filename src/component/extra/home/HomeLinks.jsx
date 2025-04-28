@@ -124,12 +124,8 @@ const HomeLinks = () => {
           </Col>
 
           <Col xs={4} className="text-center">
-            <div onClick={downloadApp}>
-              <Link
-                target="_blank"
-                to="https://usdt-uk.com/assets/images/usdt_uk.apk"
-                className="text-decoration-none text-white"
-              >
+            <div>
+              <Link to="/team" className="text-decoration-none text-white">
                 <div className="icon-wrapper mb-2">
                   <img src={invite} alt="recharge" />
                 </div>

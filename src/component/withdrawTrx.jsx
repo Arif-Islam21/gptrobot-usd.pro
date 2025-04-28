@@ -14,6 +14,7 @@ import "../assets/css/style6.css";
 import "../assets/css/style7.css";
 import "../assets/css/style8.css";
 import "../assets/css/style9.css";
+import "../styles/withdraw.css";
 
 import logo from "../assets/images/1x/logoNew.png";
 // import SupportLink from "./extra/supportLink";
@@ -23,6 +24,7 @@ import axios from "axios";
 import SingleHeader from "./extra/SingleHeader";
 import SupportLink from "./extra/supportLink";
 import TelegramPopUp from "./extra/TelegramPopUp";
+import { Form } from "react-bootstrap";
 
 const withdraw = () => {
   const navigate = useNavigate();
@@ -122,11 +124,12 @@ const withdraw = () => {
       <div className="box-border min-h-full w-full pt-45px">
         <SingleHeader></SingleHeader>
         <div className="withdraw-wrap25 p-$mg">
+          <h2 className="fs-4 fw-bold my-3 px-4">Withdraw</h2>
           <div
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#fff", color: "#000" }}
           >
-            <div className=":uno: flex items-center justify-between">
+            {/* <div className=":uno: flex items-center justify-between">
               <div className=":uno: shrink-0">
                 <div className=":uno: text-left text-18px">
                   {t("withdrawal_account")}
@@ -138,7 +141,11 @@ const withdraw = () => {
               <div className=":uno: base-logo flex items-center small-logo justify-end">
                 <img className="site-img h-full w-full rd-50%" src={logo} />
               </div>
+            </div> */}
+            <div className="d-flex align-items-center justify-content-end">
+              <button className="btn btn-primary">Show Records</button>
             </div>
+
             {alertVisible && (
               <div
                 id="copyModal"
@@ -154,22 +161,22 @@ const withdraw = () => {
               data-v-0bc71186=""
               className="number"
               style={{
-                background:
-                  "linear-gradient(rgb(0,3,108) 0%, rgb(0, 3, 108) 100%)",
+                background: "#7A034F",
               }}
             >
-              <div className="title">{t("total_balance")}</div>
+              <div className="title text-white ">
+                {t("Currently available assets (TRX)")}
+              </div>
               <div className="num">
                 {data?.user?.withdraw_balance && data?.settingtrx?.conversion
                   ? (
                       data.user.withdraw_balance / data.settingtrx.conversion
                     ).toFixed(2)
                   : 0}
-                <span>TRX</span>
               </div>
             </div>
             {/* number ends */}
-            <div className="pay-type align-items-center mb-10px">
+            {/* <div className="pay-type align-items-center mb-10px">
               <div className="shrink-0">{t("withdrawal_method")}:</div>
               <div className="flex flex-wrap items-center ">
                 <Link
@@ -180,10 +187,16 @@ const withdraw = () => {
                   TRX
                 </Link>
               </div>
+            </div> */}
+            <div className="my-3">
+              <h3 className="fs-5 fw-semibold">withdrawal token</h3>
+              <Link to="/withdraw-trx" id="trc20Usdt" className="trx-btn my-2">
+                TRX
+              </Link>
             </div>
             {/* Withdrawal method ends */}
             <form onSubmit={handleSubmit} action="#">
-              <div className="base-input is-number">
+              {/* <div className="base-input is-number">
                 <div className="input-box">
                   <div className="input-left-slot"></div>
                   <input
@@ -198,9 +211,19 @@ const withdraw = () => {
                   />
                   <div className="input-right-slot"></div>
                 </div>
-              </div>
+              </div> */}
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label className="fs-5">Withdrawal address</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Please enter the TRX wallet address"
+                />
+              </Form.Group>
               {/* base-input ends */}
-              <div className="base-input is-textarea">
+              {/* <div className="base-input is-textarea">
                 <div className="input-box">
                   <div className="input-left-slot"></div>
                   <textarea
@@ -214,9 +237,30 @@ const withdraw = () => {
 
                   <div className="input-right-slot"></div>
                 </div>
+              </div> */}
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label className="fs-5">
+                  Insert Your Desired Trx Amount To Withdraw:
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Please enter the transfer ammount"
+                />
+              </Form.Group>
+
+              <div className="d-flex align-items-center justify-content-between my-1">
+                <h3>minimum withdrawal amount:</h3>
+                <h4>5</h4>
+              </div>
+              <div className="d-flex align-items-center justify-content-between my-1">
+                <h3>maximum withdrawal amount:</h3>
+                <h4>999999</h4>
               </div>
               {/* base-input ends */}
-              <div className="base-input is-password">
+              {/* <div className="base-input is-password">
                 <div className="input-box">
                   <div className="input-left-slot"></div>
                   <input
@@ -243,29 +287,34 @@ const withdraw = () => {
                   </div>
                   <div className="input-right-slot"></div>
                 </div>
-              </div>
+              </div> */}
+              <Form.Group
+                className="mb-3 mt-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label className="fs-5">
+                  Withdrawal Security Code
+                </Form.Label>
+                <Form.Control type="password" placeholder="Security Code" />
+              </Form.Group>
               {/* base-input ends */}
               <div>
                 <div className="mt-10px flex items-center justify-between">
-                  <span className="text-sm text-$text-gray">
-                    {t("handling_fees")}
-                  </span>
+                  <span className="text-sm text-$text-gray">{t("Fee")}:</span>
                   <div className="text-right text-sm">
-                    <div className="">0 TRX</div>
+                    <del className="">0 TRX</del>
                   </div>
                 </div>
                 <div className="mt-10px flex items-center justify-between">
-                  <span className="text-sm text-$text-gray">
-                    {t("actually_received")}
-                  </span>
+                  <span className="text-sm text-$text-gray">{t("Taxes")}:</span>
                   <div className="text-sm">{actuallyReceived} TRX</div>
                 </div>
                 <button
                   type="submit"
-                  className=":uno: base-main-btn flex items-center justify-center"
+                  className=":uno: btn btn-primary my-3 mx-auto flex items-center justify-center"
                   disabled={isLoading}
                 >
-                  <div className="base-main-btn-content">
+                  <div className="">
                     <span>{t("confirm")}</span>
                   </div>
                 </button>
